@@ -1,0 +1,43 @@
+
+
+echo "===== Shell Scripting Practical ====="
+
+
+echo "Enter your name:"
+read name
+echo "Hello, $name"
+
+
+echo "Enter filename to create:"
+read file
+
+touch $file
+echo "File '$file' created."
+
+echo "Enter some text to write into file:"
+read text
+echo $text > $file
+
+echo "Content of file:"
+cat $file
+
+
+echo "Enter two numbers:"
+read a b
+
+sum=$((a + b))
+sub=$((a - b))
+mul=$((a * b))
+
+echo "Sum = $sum"
+echo "Subtraction = $sub"
+echo "Multiplication = $mul"
+
+
+if [ -f "$file" ]; then
+    echo "File exists"
+else
+    echo "File does not exist"
+fi
+
+echo "===== Program End ====="
