@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, i;
+
+    printf("Enter number of requests: ");
+    scanf("%d", &n);
+
+    int req[n];
+
+    printf("Enter request sequence:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &req[i]);
+    }
+
+    int head;
+    printf("Enter initial head position: ");
+    scanf("%d", &head);
+
+    int total = 0;
+    int movement;
+
+    printf("\n--- Disk Head Movement ---\n");
+
+    for(i = 0; i < n; i++) {
+        movement = abs(req[i] - head);
+
+        printf("Move from %d to %d = %d\n", head, req[i], movement);
+
+        total += movement;
+        head = req[i];
+    }
+
+    printf("\nTotal Disk Head Movement = %d\n", total);
+
+    return 0;
+}
